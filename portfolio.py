@@ -32,10 +32,16 @@ st.markdown(
         .stButton button {
             background-color: #64ffda;
             color: #0a192f;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
         }
         .stButton button:hover {
             background-color: #ccd6f6;
             color: #0a192f;
+        }
+        .section {
+            margin-bottom: 30px;
         }
     </style>
     """,
@@ -50,10 +56,14 @@ st.sidebar.markdown(f"📧 {email}")
 
 # Main Content
 st.title("Pradeep Rekapalli")
-st.subheader("Passionate Software Engineer")
+st.subheader("Software Engineer & Wellness Instructor for better world")
 st.markdown(
     """
-    I build accessible, pixel-perfect digital experiences for the web. With a focus on design, development, and usability, I strive to create solutions that are both visually stunning and highly functional.
+    Everyday is a opportunity to learn & evolve, this is the passion which drives to explore all & new possibilities.
+
+    I will be graduating May 2025 & looking for Software Intern for Spring 2025 , Fulltime opportunities from May onwards.
+
+    not limiting my self to particular role but able work in any technology.
     """
 )
 
@@ -64,31 +74,42 @@ st.markdown(
     - **Location**: Atlanta, GA (Open to Relocate)
     - **Education**:
       - **Kennesaw State University**: M.S. in Computer Science (Expected May 2025)
-      - **JNTU**: B.Tech in Computer Science (Graduated May 2022)
+      - **Jawaharlal Nehru Technological University**: B.Tech in Computer Science (Graduated May 2022)
     - **Skills**:
-      - Programming: C++, Python
-      - Tools: React, MongoDB, SQL, NoSQL
-      - Methodologies: Agile, CI/CD
+      - **Programming**: C++, Python
+      - **Web Technologies**: React, JavaScript, HTML, CSS, Figma
+      - **Systems & Databases**: Linux, SQL, NoSQL (MongoDB)
+      - **Methodologies**: Agile, CI/CD
     """
 )
 
 # Work Experience Section
-st.header("Experience")
+st.header("Work Experience")
 with st.container():
-    st.subheader("Research Assistant - Kennesaw State University")
+    st.subheader("Research Assistant - Kennesaw State University (Aug 2023 - May 2024)")
     st.markdown(
         """
-        - Designed a text annotator for PDF documents in five months.
-        - Collaborated with PhD researchers, achieving 82.74% crime prediction accuracy.
+        - Led a team to design a text annotator for PDF documents, completing the project in five months.
+        - Achieved 82.74% accuracy in crime prediction for two counties using Logistic Regression.
         - **Tech Stack**: HTML, CSS, JavaScript, Python, Pandas, scikit-learn.
         """
     )
     
-    st.subheader("Software Development Engineer - Infosys")
+    st.subheader("Software Development Engineer - Infosys (Jun 2022 - Jul 2023)")
     st.markdown(
         """
-        - Enhanced internal workforce management tools, improving search efficiency.
-        - Developed automation features using React and C++.
+        - Optimized workforce management tools, improving search efficiency by 30%.
+        - Developed reusable UI components and automation features in React.
+        - **Tech Stack**: React, C++, Git.
+        """
+    )
+
+    st.subheader("Frontend Software Engineer - SriTech (Nov 2021 - May 2022)")
+    st.markdown(
+        """
+        - Implemented dynamic user interfaces for 800,000 active users.
+        - Enhanced accessibility by supporting 25 languages with a machine translation feature.
+        - **Tech Stack**: React, Bootstrap, Adobe XD, AWS.
         """
     )
 
@@ -96,10 +117,10 @@ with st.container():
 st.header("Projects")
 st.markdown(
     """
-    - **Bank Management System** (C++): Account and balance management.
-    - **Word Auto Complete** (C++): Trie data structure implementation.
-    - **Mini Search Engine** (C++): Regex-based pattern matching.
-    - **Food Delivery App** (Figma): User-friendly, responsive design.
+    - **Chrome Extension - LeetCode Companion** (Dec 2024): Reduced tab-switching distractions with a coding helper extension. **Tech Stack**: JavaScript, Gemini 2.0 API.
+    - **Sudoku Solver** (Dec 2024): Developed a backtracking algorithm to solve Sudoku puzzles. **Tech Stack**: C++.
+    - **Carpool Platform** (Dec 2024): Created a scalable ride-sharing platform with estimated costs and time. **Tech Stack**: C++.
+    - **Word Auto Complete** (Sep 2024): Implemented efficient auto-completion using the Trie data structure. **Tech Stack**: C++.
     """
 )
 
@@ -107,8 +128,9 @@ st.markdown(
 st.header("Leadership & Involvement")
 st.markdown(
     """
-    - **President**, Sky Campus Happiness: Organized wellness programs for 150+ participants.
-    - **Coding Mentor**, Edyst: Guided 35+ students in C++ programming.
+    - **President**, Sky Campus Happiness (Sep 2023 - Present): Facilitated programs for 150+ participants, fostering resilience and emotional intelligence.
+    - **Content Creator**, YouTube: Day1Pradeep (Aug 2024 - Present): Created tech and student life content.
+    - **Coding Mentor**, Edyst (Apr 2022 - Mar 2023): Mentored 35+ students in C++ programming.
     """
 )
 
@@ -124,4 +146,11 @@ st.markdown(
 )
 
 # Add a call-to-action button
-st.button("Download Resume")
+if st.button("Download Resume"):
+    with open("Pradeep_Rekapalli_Resume.pdf", "rb") as file:
+        st.download_button(
+            label="Click here to download",
+            data=file,
+            file_name="Pradeep_Rekapalli_Resume.pdf",
+            mime="application/pdf"
+        )
